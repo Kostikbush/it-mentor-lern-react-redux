@@ -1,38 +1,30 @@
-import styled, {keyframes} from 'styled-components'
-
+import styled from 'styled-components';
+interface TextProps {
+    isLoading: boolean;
+}
 export const SApp = styled.div`
-  text-align: center;
-`
+    display: flex;
+    align-items: start;
+    text-align: center;
+    padding: 10px;
+`;
+export const SWrapperList = styled.article<TextProps>`
+    width: ${({ isLoading }) => {
+        return `${isLoading ? '100vw' : '100%'}`;
+    }};
+    height: ${({ isLoading }) => {
+        return `${isLoading ? '100vh' : '100%'}`;
+    }};
 
-export const SHeader = styled.header`
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-`
-
-const spin = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`
-
-export const SLogo = styled.img`
-  height: 40vmin;
-  pointer-events: none;
-
-  @media (prefers-reduced-motion: no-preference) {
-    animation: ${spin} infinite 20s linear;
-  }
-`
-
-export const SLink = styled.a`
-  color: #61dafb;
-`
+    display: ${({ isLoading }) => {
+        return `${isLoading ? 'flex' : 'grid'}`;
+    }};
+    gap: 20px;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+    }
+`;
