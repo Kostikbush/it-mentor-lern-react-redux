@@ -1,5 +1,5 @@
-import { Button } from '@mui/material';
-import { FC, ReactNode, memo } from 'react';
+import { Button, Typography } from '@mui/material';
+import { ReactNode, memo } from 'react';
 
 interface CreateBtnProps {
     onClick: () => void;
@@ -7,7 +7,6 @@ interface CreateBtnProps {
     icons?: ReactNode;
     text?: string;
 }
-// No FC
 export const CreateBtn = memo<CreateBtnProps>(({ onClick, style, icons, text = '' }) => {
     return (
         <Button
@@ -15,7 +14,7 @@ export const CreateBtn = memo<CreateBtnProps>(({ onClick, style, icons, text = '
             sx={{ transform: 'rotate(45deg)', height: 'auto', width: 'auto', padding: 0, minWidth: 25, ...style }}
         >
             {text}
-            {icons}
+            <Typography sx={{ maxWidth: '50px' }}>{icons}</Typography>
         </Button>
     );
 });
