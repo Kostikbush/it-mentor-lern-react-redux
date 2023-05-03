@@ -18,4 +18,3 @@ export const CreateBtn = memo<CreateBtnProps>(({ onClick, style, icons, text = '
         </Button>
     );
 });
-// <span>icons<span>

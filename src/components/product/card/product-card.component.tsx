@@ -14,7 +14,7 @@ const ProductCard: FC<ProductCardProps> = ({ productCard }) => {
                 display: 'flex',
                 padding: '20px',
                 width: '90%',
-
+                height: '90%',
                 justifyContent: 'space-around',
             }}
         >
