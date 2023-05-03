@@ -11,7 +11,13 @@ export const DiscriptionCard: FC<DiscriptionCardProps> = ({ text, maxLength = 15
     let isShowText = visible || text.length < maxLength;
 
     return (
-        <Stack direction='column' height={150}>
+        <Stack
+            direction='column'
+            height={150}
+            sx={{
+                minWidth: '200px',
+            }}
+        >
             <Typography
                 height={140}
                 sx={{ fontSize: '13px', textAlign: 'center', overflowY: visible ? 'scroll' : 'hidden' }}

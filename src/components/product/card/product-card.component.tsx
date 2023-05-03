@@ -11,12 +11,10 @@ const ProductCard: FC<ProductCardProps> = ({ productCard }) => {
     return (
         <Card
             sx={{
-                minWidth: '320px',
                 display: 'flex',
                 padding: '20px',
-                maxWidth: '520px',
-                minHeight: '250px',
-                maxHeight: '550px',
+                width: '90%',
+
                 justifyContent: 'space-around',
             }}
         >

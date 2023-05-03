@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { CreateBtn } from './CreateBtn';
 import { ModalCreate } from './ModalCreate';
 import { ReactComponent as CloseIcon } from '../../assets/icons/cross.svg';
@@ -6,8 +6,7 @@ import { InputCreate } from './CreateInput';
 import { createProducts } from '../../services/product-api.service';
 import { useAppDispatch } from '../../store/store';
 
-interface ProductCreationContainerProps {}
-export const ProductCreationContainer: FC<ProductCreationContainerProps> = () => {
+export const ProductCreationContainer = () => {
     const [isVisibleModal, setIsVisibleModal] = useState(false);
     const [title, setTitle] = useState('');
     const [description, setDiscription] = useState('');
